@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #003366;
+        }
+        nav {
+            background-color: #003366;
+            padding: 0.7rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        section {
+            padding: 80px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .banner {
+      height: 70vh;
+      background: linear-gradient(135deg, #b2d9f0, #5a9fd9);
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 100px; /* push content below navbar */
+    }
+
+    .container {
+      display: flex;
+      background-color: white;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(0, 51, 102, 0.5);
+    }
+
+    .left-side {
+      width: 40%;
+    }
+
+    .left-card {
+      background-color: #f0f0f0;
+      padding: 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 255, 0.3);
+    }
+
+    .left-card h2 {
+      margin-bottom: 5px;
+      font-size: 1.5rem;
+      color: #1e3a5f;
+    }
+
+    .left-card p {
+      margin: 5px 0;
+      color: #1e3a5f;
+    }
+
+    .horizontal-line {
+      height: 2px;
+      width: 60%;
+      background-color: #1e3a5f;
+      margin: 15px auto;
+    }
+
+    .spacer {
+      height: 20px;
+    }
+
+    .bottom-section {
+      background-color: #1e3a5f;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      width: 88%;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      position: relative;
+      text-align: center;
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: #1e3a5f;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      top: -30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .contact-item:hover .tooltip {
+      opacity: 1;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e3a5f;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    .right-about {
+      padding: 30px;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #1e3a5f;
+    }
+
+    .experience-heading {
+      text-align: center;
+    }
+
+    .experience-heading .years {
+      font-size: 4rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .experience-heading .text {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .right-about p {
+      margin-top: 20px;
+      text-align: justify;
+      font-size: 0.95rem;
+      color: #1e3a5f;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .left-side {
+        width: 100%;
+      }
+     .right-about {
+        width: 100%;
+        padding: 20px;
+      }
+    .bottom-section {
+        width: auto;
+}
+.right-about p {
+    padding-right: 40px;
+    }
+    .experience-heading {
+      text-align: center;
+      padding-right: 40px;
+    }
+    .banner{
+        height: 100%
+    }
+    .left-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .left-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .experience-heading .years {
+    font-size: 2.5rem;
+  }
+
+  .experience-heading .text {
+    font-size: 0.95rem;
+  }
+
+  .right-about p {
+    font-size: 0.9rem;
+  }
+}
+        #services {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            flex-direction: column;
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+        }
+        #services h1 {
+            text-align: center;
+        }
+        #services p {
+            text-align: center;
+            font-size: 16px;
+            color: #003366;
+            margin-bottom: 40px;
+        }
+        #services .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+        #services .service {
+            position: relative;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 5px;
+            border-bottom: 2px solid lightblue;
+            display: inline-block;
+            width: 45%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 600px) {
+            #services .service {
+                width: 100%;
+            }
+        }
+            
+        #contact {
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f0f0;
+        }
+        #contact i {
+    margin-right: 10px;
+    color: #003366;
+}
+        #contact h1 {
+            color: #003366;
+        }
+        #contact p {
+            font-size: 18px;
+            color: #003366;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="banner" id="about">
+        <div class="container">
+          <div class="left-side">
+            <div class="left-card">
+                <img src="photo.jpg" alt="Profile Picture" />
+                <h2>Dr Ambuj Kr Pandey </h2>
+              <div class="horizontal-line"></div>
+              <p>MBBS(Hons)</p>
+              <p>MD(Psychiatry)</p>
+              <div class="spacer"></div>
+            </div>
+            <div class="bottom-section">
+              <div class="contact-item" onclick="copyToClipboard('jane@example.com')">
+                <i class="fas fa-envelope"></i>
+                <div class="tooltip">Click to copy</div>
+              </div>
+              <div class="contact-item" onclick="copyToClipboard('+1234567890')">
+                <i class="fas fa-phone"></i>
+                <div class="tooltip">Click to copy</div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="right-about">
+            <div class="experience-heading">
+              <div class="years">14</div>
+              <div class="text">Years of Experience</div>
+            </div>
+            <p>
+                Dr Ambuj is very enthusiastic and well known practitioner in Bolpur ,Birbhum who has more than 14 years of treating various psychiatric disorders .He has a very good academic career both during MBBS and MD course .He was topper of MD (Psychiatry) examination conducted by West Bengal University of Health Sciences.He Specialises in diagnosis, treatment and Prevention of various mental health conditions.His special areas of interest are Anxiety Disorders,Psychotic Disorders,De addiction and Obsesive Compulsive Disorder .He also educates and motivates young students preparing for various entrance examinations.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div id="toast" class="toast">Copied to clipboard!</div>
+
+    
+    <section id="services">
+        <h1>Services Offered</h1>
+        <p>Please see the list of our offerings below.</p>
+        <div class="services-list">
+            <div class="service">Schizophrenia and Psychotic Disorders</div>
+            <div class="service">Depression</div>
+            <div class="service">Anxiety Disorders</div>
+            <div class="service">Bipolar Affective Disorders</div>
+            <div class="service">OCD and Related Disorders</div>
+            <div class="service">De-addiction</div>
+            <div class="service">Child and Adolescent Psychiatry</div>
+            <div class="service">Geriatric Psychiatry</div>
+            <div class="service">Counseling Services</div>
+            <div class="service">Neuropsychiatric Disorders</div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h1>Contact</h1>
+        <p><i class="fas fa-envelope"></i>Email: your.email@example.com</p>
+        <p><i class="fas fa-phone"></i>Mobile: +123 456 7890</p>
+    </section>
+
+    <script>
+        function copyToClipboard(text) {
+          navigator.clipboard.writeText(text).then(() => {
+            const toast = document.getElementById("toast");
+            toast.classList.add("show");
+            setTimeout(() => {
+              toast.classList.remove("show");
+            }, 2000);
+          });
+        }
+      </script>
+</body>
+</html>
